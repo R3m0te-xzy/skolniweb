@@ -1,3 +1,36 @@
 body {
-    background-color: blueviolet;
+    background-color: white;
+}
+#website{
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+
+#header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    background-color: grey;
+}
+
+.logo{
+    
+    color: white;
+    text-decoration: none;
+}
+
+.menu{
+    
+
+}
+
+.menu li {
+    display: inline-block;
+    padding: 5px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
 }
