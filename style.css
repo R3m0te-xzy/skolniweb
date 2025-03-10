@@ -1,15 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
 body {
     background-color: #0D1B2A;
     font-family: "Russo One", serif;
     font-style: normal;
+    transition: 0.3s;
+    font-optical-sizing: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.5s ease-out forwards;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-  
 #website {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 header {
@@ -18,14 +34,14 @@ header {
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ccc;
-    background-color: #1B263B       ;
+    background-color: #1B263B;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     color: white;
     border: 5px solid skyblue;
 }
 
-.logo img{
+.logo img {
     width: 100px;
     height: 100px;
     border: 5px solid skyblue;
@@ -40,10 +56,25 @@ nav ul {
     font-size: 18px;
 }
 
+nav ul li a {
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-underline-offset: var(--offset, 0.5em);
+    text-decoration: underline 0.15em;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+    text-underline-offset: var(--offset, 0.7em);
+    transition: 0.3s;
+}
+
 .banner {
     width: 100%;
     height: 500px;
-    background-image: url('img/banner.png');
+    background-image: url('../superbombane/cc.png');
     background-size: cover;
     background-position: center;
     opacity: 80%;
@@ -59,7 +90,6 @@ nav ul {
     text-align: center;
     letter-spacing: 2.3px;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-
 }
 
 .banner-text h1 {
@@ -97,14 +127,249 @@ footer {
     margin-top: 40px;
 }
 
-.feature-header svg {
-    margin-right: 10px;
+.feature-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
-.feature-head h3 {
-    margin-right: 10px;
+.feature-head svg {
+    fill: var(--primary-color);
 }
 
-h1{
+.feature h3 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+}
+
+/* Block Adjustments */
+.block {
+    width: 100%;  /* Make the block take full width on small screens */
+    max-width: 850px;  /* Retain the max-width on larger screens */
+    height: auto;  /* Allow the height to adjust according to content */
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    padding: 20px;
+    margin: 20px auto;  /* Center the block and add margin on both sides */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 5px solid skyblue;
+    border-radius: 3px;
+    text-align: left; /* Default to left-aligned text */
+}
+
+/* To keep blocks slim on PC, set max height */
+@media (min-width: 1024px) {
+    .block {
+        height: 200px;  /* Fix height for PC to make it slim */
+    }
+}
+
+/* Block heading and text adjustments */
+.block h3 {
     color: white;
+    font-size: 20px; /* Ensure the title is not too large */
+    line-height: 1.4;
+}
+
+.block p {
+    color: #eee;
+    font-size: 16px; /* Make the paragraph text smaller for mobile */
+    line-height: 1.6;
+    word-wrap: break-word; /* Prevent text from overflowing */
+}
+
+/* Image adjustments */
+.block img {
+    max-width: 30%; /* Limit the width of images to avoid overflowing */
+    height: 95%;  /* Maintain aspect ratio */
+    object-fit: contain;
+}
+
+
+.block-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+* {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.footer h3 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.footer-block {
+    line-height: 1.5;
+    padding: 10px 0;
+    color: var(--text-color);
+}
+
+.my-map {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.theme-switch {
+    --un-icon: url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 24 24' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M12 5q-.425 0-.712-.288T11 4V2q0-.425.288-.712T12 1t.713.288T13 2v2q0 .425-.288.713T12 5m4.95 2.05q-.275-.275-.275-.687t.275-.713l1.4-1.425q.3-.3.712-.3t.713.3q.275.275.275.7t-.275.7L18.35 7.05q-.275.275-.7.275t-.7-.275M20 13q-.425 0-.713-.288T19 12t.288-.712T20 11h2q.425 0 .713.288T23 12t-.288.713T22 13zm-8 10q-.425 0-.712-.288T11 22v-2q0-.425.288-.712T12 19t.713.288T13 20v2q0 .425-.288.713T12 23M5.65 7.05l-1.425-1.4q-.3-.3-.3-.725t.3-.7q.275-.275.7-.275t.7.275L7.05 5.65q.275.275.275.7t-.275.7q-.3.275-.7.275t-.7-.275m12.7 12.725l-1.4-1.425q-.275-.3-.275-.712t.275-.688t.688-.275t.712.275l1.425 1.4q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3M2 13q-.425 0-.712-.288T1 12t.288-.712T2 11h2q.425 0 .713.288T5 12t-.288.713T4 13zm2.225 6.775q-.275-.275-.275-.7t.275-.7L5.65 16.95q.275-.275.687-.275t.713.275q.3.3.3.713t-.3.712l-1.4 1.4q-.3.3-.725.3t-.7-.3M12 18q-2.5 0-4.25-1.75T6 12t1.75-4.25T12 6t4.25 1.75T18 12t-1.75 4.25T12 18'/%3E%3C/svg%3E");
+    -webkit-mask: var(--un-icon) no-repeat;
+    mask: var(--un-icon) no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    background-color: currentColor;
+    color: inherit;
+    width: 1.5em;
+    height: 1.2em;
+    display: inline-block;
+    cursor: pointer;
+}
+
+body.dark-theme {
+    background-color: black;
+    color: white;
+}
+
+.theme-switch.dark {
+    --un-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='currentColor' d='M6 14.77q.97 0 1.777.524q.808.525 1.187 1.42l.442 1.055h1.144q.704 0 1.192.507t.489 1.224q0 .723-.504 1.227t-1.227.504H6q-1.342 0-2.286-.945T2.769 18q0-1.367.945-2.299T6 14.769m7.314-2.083q1.461 1.462 3.28 2.244t3.866.9q.217.014.381.114q.165.1.276.262t.124.357q.011.196-.083.389q-1.01 2.294-3.215 3.646T13.248 22q.473-.516.728-1.159t.255-1.341q0-1.508-1.015-2.582t-2.472-1.112q-.646-1.387-1.928-2.212T6 12.77q-.512 0-1.014.104q-.503.104-.986.312v-.308q.012-2.621 1.345-4.752q1.334-2.13 3.678-3.252q.193-.094.401-.073t.37.113t.274.267t.126.391q.125 2.054.879 3.842q.754 1.787 2.24 3.274'/%3E%3C/svg%3E");
+}
+
+/* Responsivity */
+@media (max-width: 1024px) {
+    nav ul {
+        gap: 10px;
+        font-size: 16px;
+    }
+    .banner-text h1 {
+        font-size: 36px;
+    }
+    .banner-text p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+    }
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    .banner {
+        height: 300px;
+    }
+    .banner-text h1 {
+        font-size: 28px;
+    }
+    .banner-text p {
+        font-size: 16px;
+    }
+    .features {
+        grid-template-columns: 1fr;
+    }
+    .block {
+        flex-direction: column;
+        text-align: center;
+    }
+    .block img {
+        width: 100px;
+        height: 100px;
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 80px;
+        height: 80px;
+    }
+    .banner-text h1 {
+        font-size: 24px;
+    }
+    .banner-text p {
+        font-size: 14px;
+    }
+    .feature {
+        padding: 10px;
+    }
+    footer {
+        font-size: 14px;
+    }
+}
+
+
+
+
+/* Mobile adjustments for blocks */
+@media (max-width: 768px) {
+    .block {
+        flex-direction: column; /* Stack the content vertically */
+        text-align: center;  /* Center align text */
+        padding: 10px;  /* Reduce padding for smaller screens */
+        margin: 10px auto;  /* Add some margin to keep it centered */
+    }
+
+    .block h3 {
+        font-size: 18px;  /* Scale down heading font size for smaller screens */
+    }
+
+    .block p {
+        font-size: 14px;  /* Scale down paragraph font size for smaller screens */
+    }
+
+    .block img {
+        max-width: 80%; /* Make images responsive */
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .block {
+        padding: 10px;  /* Reduce padding further on smaller screens */
+    }
+
+    .block h3 {
+        font-size: 16px;  /* Further reduce heading font size */
+    }
+
+    .block p {
+        font-size: 12px;  /* Further reduce paragraph font size */
+    }
+
+    .block img {
+        max-width: 90%;  /* Make image even smaller */
+    }
 }
