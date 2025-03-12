@@ -74,7 +74,7 @@ nav ul li a:hover {
 .banner {
     width: 100%;
     height: 500px;
-    background-image: url('../superbombane/cc.png');
+    background-image: url('img/cc.png');
     background-size: cover;
     background-position: center;
     opacity: 80%;
@@ -152,33 +152,33 @@ footer {
     max-width: 1200px;
 }
 
-/* Block Adjustments */
+
 .block {
-    width: 100%;  /* Make the block take full width on small screens */
-    max-width: 850px;  /* Retain the max-width on larger screens */
-    height: auto;  /* Allow the height to adjust according to content */
+    width: 100%;  
+    max-width: 850px;  
+    height: auto;  
     display: flex;
     gap: 40px;
     align-items: center;
-    padding: 20px;
-    margin: 20px auto;  /* Center the block and add margin on both sides */
+    padding: 20px;                 
+    margin: 20px auto;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border: 5px solid skyblue;
     border-radius: 3px;
-    text-align: left; /* Default to left-aligned text */
+    text-align: left; 
 }
 
-/* To keep blocks slim on PC, set max height */
+
 @media (min-width: 1024px) {
     .block {
-        height: 200px;  /* Fix height for PC to make it slim */
+        height: 200px; 
     }
 }
 
-/* Block heading and text adjustments */
+
 .block h3 {
     color: white;
-    font-size: 20px; /* Ensure the title is not too large */
+    font-size: 20px; 
     line-height: 1.4;
 }
 

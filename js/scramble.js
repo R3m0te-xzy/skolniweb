@@ -4,7 +4,6 @@ class TextScramble {
         this.chars = "!<>-_\\/[]{}—=+*^?#________";
         this.update = this.update.bind(this);
     }
-    // main code
     setText(newText) {
         const oldText = this.el.innerText;
         const length = Math.max(oldText.length, newText.length);
@@ -63,7 +62,7 @@ class TextScramble {
     "Custom Drivers",
     "Customizable",
     "24/7 Support",
-    "Made by @boom1k",
+    "Made by @R3m0te_xzy",
     ];
     const el = document.querySelector(".scramble");
     const fx = new TextScramble(el);
